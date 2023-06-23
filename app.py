@@ -18,7 +18,8 @@ lista = lista.drop_duplicates()
 lista = lista.sort_values(by=["alunos aprovados"], ascending=False)
 df = df.drop(columns=["curso"])
 print(lista.head(10))
-st.plotly_chart(px.parallel_categories(df))
+st.plotly_chart(px.parallel_categories(df).update_layout(
+autosize=True))
 st.title("lista de aprovados")
 st.write(lista)
 
